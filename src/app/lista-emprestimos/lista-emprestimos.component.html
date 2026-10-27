@@ -1,0 +1,24 @@
+<h2>Empréstimos cadastrados</h2>
+
+<p>Total: {{ emprestimoService.listar().length }}</p>
+<p>Em aberto: {{ quantidadeAbertos() }}</p>
+<p>Devolvidos: {{ quantidadeDevolvidos() }}</p>
+
+<p><a routerLink="/cadastro">Cadastrar novo empréstimo</a></p>
+
+<div *ngIf="emprestimoService.listar().length === 0">
+  Nenhum empréstimo cadastrado.
+</div>
+
+<div *ngFor="let item of emprestimoService.listar()" class="emprestimo"
+     [ngClass]="item.devolvido ? 'devolvido' : 'aberto'">
+  <h3>{{ item.tituloLivro }}</h3>
+  <p>Nome: {{ item.nomePessoa }}</p>
+  <p>Data prevista: {{ item.dataPrevistaDevolucao | date:'dd/MM/yyyy' }}</p>
+  <p>Status: {{ item.devolvido ? 'Devolvido' : 'Em aberto' }}</p>
+
+  <button (click)="registrarDevolucao(item.id)" [disabled]="item.devolvido">
+    Registrar devolução
+  </button>
+  <button class="remover" (click)="remover(item.id)">Remover</button>
+</div>

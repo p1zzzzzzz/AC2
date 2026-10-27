@@ -1,0 +1,16 @@
+<h2>Cadastrar empréstimo</h2>
+
+<form (ngSubmit)="cadastrar()">
+  <label>Nome da pessoa</label>
+  <input type="text" name="nomePessoa" [(ngModel)]="nomePessoa" required>
+
+  <label>Título do livro</label>
+  <input type="text" name="tituloLivro" [(ngModel)]="tituloLivro" required>
+
+  <label>Data prevista de devolução</label>
+  <input type="date" name="dataPrevista" [(ngModel)]="dataPrevista" required>
+
+  <button type="submit">Cadastrar</button>
+</form>
+
+<p><a routerLink="/lista">Ver empréstimos cadastrados</a></p>

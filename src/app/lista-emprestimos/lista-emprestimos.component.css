@@ -1,0 +1,33 @@
+.emprestimo {
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.aberto {
+  background: #fff1a8;
+}
+
+.devolvido {
+  background: #c9efcf;
+}
+
+button {
+  padding: 8px;
+  margin-right: 8px;
+  border: 0;
+  border-radius: 4px;
+  background: #268344;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+.remover {
+  background: #d47b22;
+}
